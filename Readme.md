@@ -23,3 +23,7 @@ MariaBD
 ### Entorno
 Para el desarrollo se usara **VSCode** y **XAMPP**. Como recomendación de extensiones parea VSCode usa:
 - Live Server
+- Error Lens
+- Git Graph
+
+Para saber más sobre el proyecto vea se ![Contributing](Contributing.md)

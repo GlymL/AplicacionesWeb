@@ -1,11 +1,17 @@
 # Índice
 1. [Descripción](#1-descripción)
+   
    1.1. [Arquitectura](#11-arquitectura)
+   
    1.2. [Entorno](#12-entorno)
+   
 2. [Base de Datos](#2-base-de-datos)
 3. [Usuarios](#3-usuarios)
-   3.1. [Alumno](#31-alumno)
-   3.2. [Administrador](#32-administrador)
+
+   4.1. [Alumno](#31-alumno)
+   
+   4.2. [Administrador](#32-administrador)
+   
 4. [Diseño de la interfaz](#4-diseño-de-la-interfaz)
 5. [Evaluación y Entrega](#5-evaluación-y-entrega)
 

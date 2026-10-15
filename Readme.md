@@ -26,4 +26,4 @@ Para el desarrollo se usara **VSCode** y **XAMPP**. Como recomendación de exten
 - Error Lens
 - Git Graph
 
-Para saber más sobre el proyecto vea se ![Contributing](Contributing.md)
+Para saber más sobre el proyecto vea se [Docs del profesor](./Docs/Docs_profe.md)

@@ -86,3 +86,17 @@ nav a:hover{
     background-color: var(--primary-light);
     color: var(--text);
 }
+
+.listaCursos{
+    margin: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.listaCursos div{
+    flex-shrink: 1;
+    padding: 1rem;
+    min-width: 20%;
+}

@@ -31,7 +31,9 @@
   }
 }
 
-
+:root{
+    --spacing: 1rem;
+}
 
 *{
     margin: 0;
@@ -41,6 +43,22 @@
 body{
     background-color: var(--background);
     color: var(--text);
+
+    display: grid;
+    grid-template-rows: 70px 40px 1fr 40px;
+}
+
+main{
+    height: 100%;
+}
+
+/* --------- Estilos utiles --------- */
+.show{
+    visibility: visible;
+}
+
+.hide{
+    visibility: hidden;
 }
 
 /*  --------- HEADER ---------  */
@@ -58,28 +76,34 @@ header{
 .logo{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--spacing);
 }
 
-
+.logo a{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
 
 /*  --------- NAV ---------  */
 nav ul{
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-
     list-style-type: none;
 }
 
 nav a{
-    padding: 1.5rem 2rem;
-
-    display: block;
+    padding: 0 2rem;
+    height: 70px;
+    
     font-weight: bold;
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
 }
 
 nav a:hover{
@@ -87,16 +111,45 @@ nav a:hover{
     color: var(--text);
 }
 
+/* --------- Miga --------- */
+.miga {
+    padding-left: 2rem;
+    
+    background: var(--secondary-light);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.miga p{
+    margin:0;
+}
+
+/* --------- Cursos --------- */
+
 .listaCursos{
     margin: 2rem;
 
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing);
 }
 
 .listaCursos div{
-    flex-shrink: 1;
+    flex-basis: min-content;
     padding: 1rem;
-    min-width: 20%;
+    min-width: calc((100%/4) - var(--spacing));
+}
+
+/* --------- Footer --------- */
+footer{
+    padding: 1rem 1rem 0 1rem;
+    background: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

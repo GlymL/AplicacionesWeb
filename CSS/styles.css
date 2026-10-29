@@ -143,6 +143,38 @@ nav a:hover{
     min-width: calc((100%/4) - var(--spacing));
 }
 
+/* --------- Aside --------- */
+aside{
+    margin: 1rem;
+    padding: 1rem;
+    width: 20%;
+    border: 1px solid var(--border-dark);
+    border-radius: .5rem;
+}
+
+aside form{
+    display: flex;
+    flex-direction: column;
+}
+
+aside form label{
+    margin-top: 1rem;
+}
+
+aside form input[type="submit"]{
+    margin: 1rem 0;
+}
+
+aside .buttons{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+aside .buttons button{
+    flex: 1;
+}
+
 /* --------- Footer --------- */
 footer{
     padding: 1rem 1rem 0 1rem;

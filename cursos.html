@@ -40,14 +40,37 @@
         
         <div class="listaCursos"></div>
 
-        <div class="buttons">
-            <button class="btn btn-primary" id="btn_crear">Crear default curso</button>
-            <button class="btn btn-primary" id="btn_borrar">Borrar Curso</button>
-            <button class="btn btn-primary" id="btn_ordenar">Ordenar cursos</button>
-        </div>
+        
+        <aside>
+            <h3>Panel de gestión</h3>
+            <form id="panel">
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" placeholder="Nombre del curso">
+                
+                <label for="desc">Descripcion:</label>
+                <textarea name="desc" id="desc" placeholder="Descripción del curso"></textarea>
+                
+                <label for="time">Turno:</label>
+                <select name="time" id="time">
+                    <option value="0">Mañana</option>
+                    <option value="1">Mediodía</option>
+                    <option value="2">Tarde</option>
+                </select>
+                
+                <label for="cap">Plazas:</label>
+                <input type="number" name="cap" id="cap">
 
+                <input class="btn btn-success fw-bold" type="submit" value="Crear">
+            </form>
+
+            <div class="buttons">
+                <button class="btn btn-primary fw-bold" id="btn_borrar">Borrar Curso</button>
+                <button class="btn btn-primary fw-bold" id="btn_ordenar">Ordenar cursos</button>
+            </div>
+        </aside>
     </main>
-
+    
+    
     <footer>
         <p>&copy; Todos los derechos reservados</p>
     </footer>

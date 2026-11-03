@@ -33,6 +33,7 @@
 
 :root{
     --spacing: 1rem;
+    --nav-height: 70px;
 }
 
 *{
@@ -40,167 +41,74 @@
     padding: 0;
 }
 
-body{
-    background-color: var(--background);
-    color: var(--text);
+/* ---------- General ---------- */
 
-    display: grid;
-    grid-template-rows: 70px 40px 1fr 40px;
+body {
+    background: var(--background);
 }
 
-main{
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr 400px;
-}
-
-h1{
-    text-align: center;
-    grid-column: span 2;
-}
-
-/* --------- Estilos utiles --------- */
-.show{
-    visibility: visible;
-}
-
-.hide{
-    visibility: hidden;
-}
-
-/*  --------- HEADER ---------  */
+/* ---------- NAV ---------- */
 header{
-    padding: 0 3rem;
-
+    padding: 0 1.5rem;
+    height: var(--nav-height);
+    background: var(--primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
-    background: var(--primary);
+header a{
     color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .logo{
     display: flex;
     align-items: center;
-    gap: var(--spacing);
 }
-
+.logo img{
+    filter: invert(1);
+}
 .logo a{
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
+}
+.logo a:hover{
     color: white;
-    text-decoration: none;
 }
 
-/*  --------- NAV ---------  */
 nav ul{
     margin: 0;
     display: flex;
-    align-items: center;
-    list-style-type: none;
+    list-style: none;
 }
-
 nav a{
-    padding: 0 2rem;
-    height: 70px;
-    
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
+    padding: 0 1.5rem;
+    display: block;
+    height: var(--nav-height);
+    align-content: center;
+
 }
 
 nav a:hover{
-    background-color: var(--primary-light);
-    color: var(--text);
-}
-
-/* --------- Miga --------- */
-.miga {
-    padding-left: 2rem;
-    
-    background: var(--secondary-light);
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
-.miga p{
-    margin:0;
-}
-
-/* --------- Cursos --------- */
-
-.listaCursos{
-    margin: 1rem;
-
-    display: flex;
-    flex-wrap: wrap;
-    grid-row: 2/3;
-    gap: var(--spacing);
-}
-
-.listaCursos div{
-    flex-basis: min-content;
-
-    background-color: var(--primary);
-    padding: 1rem;
-    max-width: calc((100%/3) - var(--spacing));
-    min-width: calc((100%/3) - var(--spacing));
-}
-
-/* --------- Aside --------- */
-aside{
-
-    margin: 1rem 3rem 0 0;
-    padding: 1rem 1rem;
-    width: 100%;
-    max-width: 25rem;
-    height: 30rem;
-    border: 1px solid var(--border-dark);
-    grid-row: 2/3;
-    grid-column: 2;
-    position: sticky;
-    top:0;
-    border-radius: .5rem;
-}
-
-aside form{
-    display: flex;
-    flex-direction: column;
-}
-
-aside form label{
-    margin-top: 1rem;
-}
-
-aside form input[type="submit"]{
-    margin: 1rem 0;
-}
-
-aside .buttons{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing);
-}
-
-aside .buttons button{
-    flex: 1;
-}
-
-/* --------- Footer --------- */
-footer{
-    padding: 1rem 1rem 0 1rem;
-    background: black;
     color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--primary-light);
 }
+
+/* ---------- CARTAS ---------- */
+
+/* ---------- ASIDE ---------- */
+
+/* ---------- FOOTER ---------- */
+footer{
+    padding: 1rem 0;
+    background: var(--text);
+    color: var(--background);
+}
+footer p{
+    margin: 0;
+    justify-self: center;
+}
+
+/* ---------- RESPONSIVE ---------- */

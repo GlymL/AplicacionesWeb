@@ -34,6 +34,8 @@
 :root{
     --spacing: 1rem;
     --nav-height: 70px;
+    --foot-height: 60px;
+    --miga-height: 50px
 }
 
 *{
@@ -44,7 +46,12 @@
 /* ---------- General ---------- */
 
 body {
+    height: 100vh;
     background: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* ---------- NAV ---------- */
@@ -96,6 +103,27 @@ nav a:hover{
     background: var(--primary-light);
 }
 
+/* ---------- MIGA ---------- */
+.miga {
+    padding-left: 2rem;
+    min-height: var(--miga-height);
+    background: var(--secondary-light);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.miga p{
+    margin:0;
+}
+
+/* ---------- MAIN ---------- */
+main{
+    flex-grow: 2;
+}
+
 /* ---------- CARTAS ---------- */
 
 /* ---------- ASIDE ---------- */
@@ -103,6 +131,7 @@ nav a:hover{
 /* ---------- FOOTER ---------- */
 footer{
     padding: 1rem 0;
+    height: var(--foot-height);
     background: var(--text);
     color: var(--background);
 }

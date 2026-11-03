@@ -50,6 +50,14 @@ body{
 
 main{
     height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+h1{
+    text-align: center;
+    grid-column: span 2;
 }
 
 /* --------- Estilos utiles --------- */
@@ -130,25 +138,36 @@ nav a:hover{
 /* --------- Cursos --------- */
 
 .listaCursos{
-    margin: 2rem;
+    margin: 1rem;
 
     display: flex;
     flex-wrap: wrap;
+    grid-row: 2/3;
     gap: var(--spacing);
 }
 
 .listaCursos div{
     flex-basis: min-content;
+
+    background-color: var(--primary);
     padding: 1rem;
-    min-width: calc((100%/4) - var(--spacing));
+    max-width: calc((100%/3) - var(--spacing));
+    min-width: calc((100%/3) - var(--spacing));
 }
 
 /* --------- Aside --------- */
 aside{
-    margin: 1rem;
-    padding: 1rem;
-    width: 20%;
+
+    margin: 1rem 3rem 0 0;
+    padding: 1rem 1rem;
+    width: 100%;
+    max-width: 25rem;
+    height: 30rem;
     border: 1px solid var(--border-dark);
+    grid-row: 2/3;
+    grid-column: 2;
+    position: sticky;
+    top:0;
     border-radius: .5rem;
 }
 

@@ -45,20 +45,20 @@
             <h3>Panel de gestión</h3>
             <form id="panel">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del curso">
+                <input type="text" name="name" id="name" placeholder="Nombre del curso" required>
                 
                 <label for="desc">Descripcion:</label>
-                <textarea name="desc" id="desc" placeholder="Descripción del curso"></textarea>
+                <textarea name="desc" id="desc" placeholder="Descripción del curso" required></textarea>
                 
                 <label for="time">Turno:</label>
-                <select name="time" id="time">
+                <select name="time" id="time" required>
                     <option value="0">Mañana</option>
                     <option value="1">Mediodía</option>
                     <option value="2">Tarde</option>
                 </select>
                 
                 <label for="cap">Plazas:</label>
-                <input type="number" name="cap" id="cap">
+                <input type="number" name="cap" id="cap" required>
 
                 <input class="btn btn-success fw-bold" type="submit" value="Crear">
             </form>

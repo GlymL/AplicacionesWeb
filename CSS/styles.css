@@ -78,8 +78,9 @@ header a{
     filter: invert(1);
 }
 .logo a{
-    margin: 0;
-    font-size: 2rem;
+    margin: 0 0 0 1rem;
+    width: min-content;
+    font-size: 1.2rem;
 }
 .logo a:hover{
     color: white;
@@ -87,6 +88,7 @@ header a{
 
 nav ul{
     margin: 0;
+    padding: 0;
     display: flex;
     list-style: none;
 }
@@ -141,3 +143,9 @@ footer p{
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+@media (width < 1200px) {
+    nav{
+        background-color: red;
+    }
+}

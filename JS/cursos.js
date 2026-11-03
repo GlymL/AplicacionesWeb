@@ -91,10 +91,30 @@ btn_borrar.onclick = (e) => {
     })
 }
 
-let btn_crear = document.querySelector("#btn_crear");
-btn_crear.onclick = (e) => {
+let form = document.querySelector("#panel");
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
     let nCurso = { ...plantilla };
     nCurso.id = cursos.length+1;
+
+
+    const nameCurso = form.elements["name"].value;
+    const descCurso = form.elements["desc"].value;
+    const capCurso = form.elements["cap"].value;
+    const tCurso = form.elements["time"].value;
+
+    nCurso.nombre = nameCurso;
+    nCurso.descripcion = descCurso;
+    nCurso.plazas = capCurso;
+    if(tCurso == 0)
+        nCurso.horario = "De mañana";
+    else if(tCurso == 1)
+        nCurso.horario = "De mediodía";
+    else
+        nCurso.horario = "De tarde";
+
+
     cursos.push(nCurso);
 
     target.innerHTML = "";
@@ -102,4 +122,7 @@ btn_crear.onclick = (e) => {
         if(c.estado == Estados.ACTIVO)
             target.innerHTML += crearGUICurso(c);
     })
-}
+
+    console.log("A");
+})
+

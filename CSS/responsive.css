@@ -29,12 +29,12 @@
         width: 320px;
         background-color: var(--primary-light);
 
-        transition: transform .5s ease;
         transform: translateX(-320px);
-        visibility: hidden;
+        transition: transform .25s ease;
+        z-index: 10;
     }
     
-    nav.trans{
+    nav.show{
         transform: translateX(0);
     }
 
@@ -48,6 +48,10 @@
 
     nav .lista_menu a:hover{
         background-color: var(--primary);
+    }
+
+    nav .lista_menu li:first-child{
+        display: block;
     }
 
     .logo a{

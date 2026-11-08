@@ -1,0 +1,68 @@
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (width < 700px) {
+
+    .logo img{
+
+        display: none;
+    }    
+}
+
+@media (width < 1200px) {
+
+    header button{
+        display: none;
+    }
+
+    .btn_menu{
+
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+    }
+
+    /* INTENTO */
+
+    header{
+        display:flex;
+    }
+
+    .lista_menu{
+
+        background-color: var(--primary-light);
+
+        list-style:none;
+        display: none;
+        align-content: space-around;
+    }
+
+
+    .topnav {
+
+        margin: 30.5rem 0 0 0;
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+    }
+
+    .topnav li a{          
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: flex;
+    }
+
+    
+
+    .topnav li a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+
+}

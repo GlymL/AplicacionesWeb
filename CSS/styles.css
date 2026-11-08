@@ -70,6 +70,13 @@ header a{
     font-weight: bold;
 }
 
+header button{
+    margin: 0;
+    padding: 0;
+    
+    display: none;
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -92,6 +99,8 @@ nav ul{
     display: flex;
     list-style: none;
 }
+
+
 nav a{
     padding: 0 1.5rem;
     display: block;
@@ -140,12 +149,4 @@ footer{
 footer p{
     margin: 0;
     justify-self: center;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (width < 1200px) {
-    nav{
-        background-color: red;
-    }
 }

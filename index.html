@@ -7,6 +7,9 @@
     
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/responsive.css" defer>
+     <script src="./JS/menu.js" defer></script>
+</head>
 </head>
 <body>
     <header> 
@@ -14,8 +17,11 @@
             <img src="./IMG/default_min.webp" width="64" alt="Logo">
             <a href="index.html">Centro de Formación</a>
         </div>
-        <nav>
-            <ul>
+        <button id="btn_menu" class="btn_menu"> 
+            <img src="./IMG/default.webp" width="64" alt="Menu lateral">
+        </button>
+        <nav class="topnav">
+            <ul id="lista_menu" class="lista_menu">
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="docentes.html">Docentes</a></li>
                 <li><a href="aulas.html">Aulas</a></li>

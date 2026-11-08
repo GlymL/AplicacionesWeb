@@ -1,12 +1,14 @@
 let btn_menu = document.querySelector("#btn_menu");
 
 btn_menu.onclick = e => {
-    let lista_menu = document.querySelector("#lista_menu");
-    console.log(lista_menu);
+    let nav = document.querySelector("#menu");
 
-    if (lista_menu.style.display === "block") {
-        lista_menu.style.display = "none";
-    } else {
-        lista_menu.style.display = "block";
+    nav.classList.toggle("trans");
+    if(nav.classList.contains("show")){
+        setTimeout(e => {
+            nav.classList.remove("show");
+        }, 500)
+    }else{
+        nav.classList.add("show");
     }
 }

@@ -11,58 +11,48 @@
 
 @media (width < 1200px) {
 
-    header button{
-        display: none;
-    }
-
     .btn_menu{
-
-        background: black;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        fill: var(--text);
         display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-
     }
 
-    /* INTENTO */
+    nav{
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
 
-    header{
-        display:flex;
-    }
-
-    .lista_menu{
-
+        height: 100vh;
+        width: 320px;
         background-color: var(--primary-light);
 
-        list-style:none;
-        display: none;
-        align-content: space-around;
+        transition: transform .5s ease;
+        transform: translateX(-320px);
+        visibility: hidden;
     }
-
-
-    .topnav {
-
-        margin: 30.5rem 0 0 0;
-        overflow: hidden;
-        background-color: #333;
-        position: relative;
-    }
-
-    .topnav li a{          
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: flex;
-    }
-
     
-
-    .topnav li a:hover {
-        background-color: #ddd;
-        color: black;
+    nav.trans{
+        transform: translateX(0);
     }
 
+    nav .lista_menu{
+        flex-direction: column;
+    }
 
+    nav .lista_menu a{
+        padding-right: 5rem;
+    }
+
+    nav .lista_menu a:hover{
+        background-color: var(--primary);
+    }
+
+    .logo a{
+        width: max-content;
+        height: var(--nav-height);
+        align-content: center;
+    }
 }

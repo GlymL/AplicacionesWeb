@@ -35,7 +35,8 @@
     --spacing: 1rem;
     --nav-height: 70px;
     --foot-height: 60px;
-    --miga-height: 50px
+    --miga-height: 50px;
+    --card-amount: 3;
 }
 
 *{
@@ -147,6 +148,7 @@ main{
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: var(--spacing);
 
     grid-column: 1;
@@ -154,7 +156,7 @@ main{
 
 .card {
     padding: 1rem;
-    width: calc((100%/3) - var(--spacing));
+    width: calc((100%/var(--card-amount)) - var(--spacing));
     height: 350px;
     background: var(--primary-light);
     border: 1px solid var(--border-dark);

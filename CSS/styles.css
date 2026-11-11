@@ -132,12 +132,57 @@ nav a:hover{
 
 /* ---------- MAIN ---------- */
 main{
+    padding: 1rem 3rem;
     flex-grow: 2;
+
+    display: grid;
+    grid-template-columns: 1fr .4fr;
+    grid-template-rows: min-content;
 }
 
 /* ---------- CARTAS ---------- */
+.listaCursos {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+
+    grid-column: 1;
+}
+
+.card {
+    padding: 1rem;
+    max-width: calc((100%/3) - var(--spacing));
+    height: 350px;
+    background: var(--primary-light);
+    border: 1px solid var(--border-dark);
+
+    overflow: auto;
+}
+
+.card h3, .card p{
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.card p:last-child{
+    margin: 0;
+}
+
+.card::-webkit-scrollbar{
+    background: none;
+    width: 5px;
+}
+
+.card::-webkit-scrollbar-thumb{
+    background-color: hsla(0, 0%, 50%, 0.8);
+    border-radius: 1rem;
+}
 
 /* ---------- ASIDE ---------- */
+aside {
+    grid-column: 2;
+}
 
 /* ---------- FOOTER ---------- */
 footer{

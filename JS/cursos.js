@@ -47,9 +47,9 @@ function crearGUICurso(curso){
         <div class="card" data-id="` + curso.id + `">
             <h3>`+ curso.nombre +`</h3>
             <p>`+ curso.descripcion +`</p>
-            <p>`+ curso.horario +`</p>
-            <p>`+ curso.plazas +`</p>
-            <p>`+ curso.estado +`</p>
+            <p>Horario: `+ curso.horario +`</p>
+            <p>Plazas: `+ curso.plazas +`</p>
+            <p>Estado: `+ curso.estado +`</p>
         </div>
         `;
 

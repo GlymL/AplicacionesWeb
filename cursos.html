@@ -43,7 +43,7 @@
         <a href="cursos.html">Cursos</a>
     </div>
 
-    <main>
+    <main class="main-cursos">
         <h1>Cursos</h1>
         
         <div class="listaCursos"></div>
@@ -52,21 +52,27 @@
         <aside>
             <h3>Panel de gestión</h3>
             <form id="panel">
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del curso" required>
+                <div class="input-group">
+                    <label class="input-group-text fw-bold" for="name">Nombre:</label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Nombre del curso" required>
+                </div>
                 
-                <label for="desc">Descripcion:</label>
-                <textarea name="desc" id="desc" placeholder="Descripción del curso" required></textarea>
+                <label class="fw-bold" for="desc">Descripcion:</label>
+                <textarea class="form-control" name="desc" id="desc" placeholder="Descripción del curso" required></textarea>
                 
-                <label for="time">Turno:</label>
-                <select name="time" id="time" required>
-                    <option value="0">Mañana</option>
-                    <option value="1">Mediodía</option>
-                    <option value="2">Tarde</option>
-                </select>
+                <div class="input-group">
+                    <label class="input-group-text fw-bold" for="time">Turno:</label>
+                    <select class="form-control" name="time" id="time" required>
+                        <option selected value="0">Mañana</option>
+                        <option value="1">Mediodía</option>
+                        <option value="2">Tarde</option>
+                    </select>
+                </div>
                 
-                <label for="cap">Plazas:</label>
-                <input type="number" name="cap" id="cap" required>
+                <div class="input-group">
+                    <label class="input-group-text fw-bold" for="cap">Plazas:</label>
+                    <input class="form-control" type="number" name="cap" id="cap" min="0" value="0" required>
+                </div>
 
                 <input class="btn btn-success fw-bold" type="submit" value="Crear">
             </form>

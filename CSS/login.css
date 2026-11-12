@@ -1,0 +1,22 @@
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+main div{
+    flex-grow: 1;
+}
+
+.log form{
+    margin: auto;
+    padding: 0 1rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.log label, .log input{
+    margin-bottom: 1rem;
+}

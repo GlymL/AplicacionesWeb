@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/GlymL/AplicacionesWeb/issues"
   },
-  "homepage": "https://github.com/GlymL/AplicacionesWeb#readme"
+  "homepage": "https://github.com/GlymL/AplicacionesWeb#readme",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "path": "^0.12.7"
+  }
 }

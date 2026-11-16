@@ -4,7 +4,7 @@
   "description": "Para aprender a hacer una aplicacion web",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",

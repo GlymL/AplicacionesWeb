@@ -1,0 +1,24 @@
+{
+  "name": "app_web",
+  "version": "1.0.0",
+  "description": "Para aprender a hacer una aplicacion web",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlymL/AplicacionesWeb.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "web"
+  ],
+  "author": "JowisGood GlymL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GlymL/AplicacionesWeb/issues"
+  },
+  "homepage": "https://github.com/GlymL/AplicacionesWeb#readme"
+}

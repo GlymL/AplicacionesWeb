@@ -27,3 +27,11 @@ Para el desarrollo se usara **VSCode** y **XAMPP**. Como recomendación de exten
 - Git Graph
 
 Para saber más sobre el proyecto vea se [Docs del profesor](./Docs/Docs_profe.md)
+
+> [!NOTE]
+> Recuerda que necesitas crear una archi `.env` y poner las siguientes variables
+> ```` dotenv
+> PORT=3000
+> DB_USER=tu_suario
+> DB_PASSWORD=contra_DB
+> ````

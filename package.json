@@ -4,8 +4,8 @@
   "description": "Para aprender a hacer una aplicacion web",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js"
+    "start": "node index.js",
+    "dev": "node --watch index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/GlymL/AplicacionesWeb#readme",
   "dependencies": {
     "dotenv": "^18.0.10",
+    "ejs": "^7.0.2",
     "express": "^5.3.0",
     "mariadb": "^3.5.5",
     "path": "^0.12.7"

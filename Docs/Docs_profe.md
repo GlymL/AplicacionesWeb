@@ -48,7 +48,7 @@ Para poder realizar el proyecto se deberá preparar las siguientes aplicaciones:
   - ErrorLens
   - GitGraph
   - CSS Peak
-- [XAMPP](https://www.apachefriends.org/es/index.html): Se en carga de abrir los puertos de la página y de la Base de Datos.
+- [XAMPP](https://www.apachefriends.org/es//): Se en carga de abrir los puertos de la página y de la Base de Datos.
 
 # 2. Base de Datos
 Usaremos MariaDB, se nos dará un script SQL (aw_practica.sql) par a la creación de la BD y unos ficheros JSON con datos básicos. El diagrama de entidad relación sería:

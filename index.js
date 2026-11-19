@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config();
 
-const db = require("./database");
+const mariadb = require("./services/mariadb");
 
 PORT = process.env.PORT || 3000
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // usamos las rutas de / para las vistas y las /api para las de API REST
 app.use("/", viewRoutes);
 
-db()
+mariadb()
 
 app.listen(PORT, () => {
   console.log(`Centro de formación esta en http://localhost:${PORT}`);

@@ -1,12 +1,12 @@
-const mariadb = require('mariadb');
+const db = require('mariadb');
 
-const db = async () => {
+const mariadb = async () => {
     try {
-        const conn = await mariadb.createConnection({ 
+        const conn = await db.createConnection({ 
             user: process.env.DB_USER, 
             password: process.env.DB_PASSWORD, 
             port: 3306,
-            database: 'aw',
+            database: 'aw_practica',
             metaAsArray: false,
             ssl: false,
             dateStrings: true  
@@ -19,4 +19,4 @@ const db = async () => {
     }
 }
 
-module.exports = db;
+module.exports = mariadb;

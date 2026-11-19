@@ -12,7 +12,7 @@ const db = async () => {
             dateStrings: true  
       });
 
-      console.log("Conectado a la Base de datos de MariaDB en http://localhos:3306");
+      console.log("Conectado a la Base de datos de MariaDB en http://localhost:3306");
     }catch (error){
         console.error("No hay MariaDB error:", error.message)
         process.exit(1);

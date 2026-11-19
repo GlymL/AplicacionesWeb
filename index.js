@@ -14,8 +14,8 @@ const viewRoutes = require("./routes/views")
 const app = express();
 
 // Se tiene que poner un engine para poder interpretar html o ejs
-app.engine("html", ejs.renderFile)
-app.set("view engine", "html");
+app.engine("ejs", ejs.renderFile)
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Middlewares, necesario para interpretar json, url y tener la carpeta de public accesible. 

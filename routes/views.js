@@ -29,4 +29,12 @@ router.get("/administracion", async (req, res) => {
     res.status(200).render("administracion");
 });
 
+router.get("/signup", async (req, res) => {
+    res.status(200).render("signup");
+});
+
+router.get("/login", async (req, res) => {
+    res.status(200).render("login");
+});
+
 module.exports = router;

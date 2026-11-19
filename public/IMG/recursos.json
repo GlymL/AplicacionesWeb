@@ -2,33 +2,33 @@
     {
         "file": "logo.png",
         "category": "Logo",
-        "x": 38,
-        "y": 258,
-        "width": 378,
-        "height": 118
+        "x": 47,
+        "y": 249,
+        "width": 368,
+        "height": 124
     },
     {
         "file": "logo-mini.png",
         "category": "Logo",
-        "x": 452,
-        "y": 255,
-        "width": 139,
-        "height": 129
+        "x": 457,
+        "y": 253,
+        "width": 136,
+        "height": 130
     },
     {
         "file": "favicon.ico",
         "category": "Icono",
-        "x": 668,
+        "x": 665,
         "y": 299,
-        "width": 72,
-        "height": 65
+        "width": 79,
+        "height": 68
     },
     {
         "file": "banner.png",
         "category": "Banner",
-        "x": 802,
-        "y": 244,
-        "width": 609,
+        "x": 801,
+        "y": 242,
+        "width": 611,
         "height": 175
     }
 ]

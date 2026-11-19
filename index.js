@@ -14,7 +14,6 @@ const viewRoutes = require("./routes/views")
 const app = express();
 
 // Se tiene que poner un engine para poder interpretar html o ejs
-app.engine("ejs", ejs.renderFile)
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 

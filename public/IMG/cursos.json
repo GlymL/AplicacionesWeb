@@ -1,0 +1,66 @@
+[
+    {
+        "file": "Curso_1.jpg",
+        "category": "Curso",
+        "x": 88,
+        "y": 43,
+        "width": 607,
+        "height": 224
+    },
+    {
+        "file": "Curso_2.jpg",
+        "category": "Curso",
+        "x": 755,
+        "y": 41,
+        "width": 606,
+        "height": 224
+    },
+    {
+        "file": "Curso_3.jpg",
+        "category": "Curso",
+        "x": 88,
+        "y": 301,
+        "width": 606,
+        "height": 224
+    },
+    {
+        "file": "Curso_4.jpg",
+        "category": "Curso",
+        "x": 753,
+        "y": 299,
+        "width": 607,
+        "height": 227
+    },
+    {
+        "file": "Curso_5.jpg",
+        "category": "Curso",
+        "x": 88,
+        "y": 557,
+        "width": 606,
+        "height": 224
+    },
+    {
+        "file": "Curso_6.jpg",
+        "category": "Curso",
+        "x": 751,
+        "y": 557,
+        "width": 612,
+        "height": 226
+    },
+    {
+        "file": "Curso_7.jpg",
+        "category": "Curso",
+        "x": 90,
+        "y": 812,
+        "width": 604,
+        "height": 232
+    },
+    {
+        "file": "Curso_8.jpg",
+        "category": "Curso",
+        "x": 753,
+        "y": 812,
+        "width": 609,
+        "height": 234
+    }
+]

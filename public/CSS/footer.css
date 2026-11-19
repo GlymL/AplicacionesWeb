@@ -1,0 +1,11 @@
+footer{
+    margin-top: 1rem;
+    padding: 1rem 0;
+    height: var(--foot-height);
+    background: var(--text);
+    color: var(--background);
+}
+footer p{
+    margin: 0;
+    justify-self: center;
+}

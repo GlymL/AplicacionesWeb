@@ -1,0 +1,75 @@
+/* ---------- NAV ---------- */
+header{
+    padding: 0 1.5rem;
+    height: var(--nav-height);
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header button{
+    margin: 0;
+    padding: 0;
+    
+    display: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    filter: invert(1);
+}
+.logo a{
+    margin: 0 0 0 1rem;
+    width: min-content;
+    font-size: 1.2rem;
+}
+.logo a:hover{
+    color: white;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+
+nav a{
+    padding: 0 1.5rem;
+    display: block;
+    height: var(--nav-height);
+    align-content: center;
+
+}
+
+nav a:hover{
+    color: white;
+    background: var(--primary-light);
+}
+
+/* ---------- MIGA ---------- */
+.miga {
+    padding-left: 2rem;
+    min-height: var(--miga-height);
+    background: var(--secondary-light);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.miga p{
+    margin:0;
+}

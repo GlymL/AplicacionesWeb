@@ -1,0 +1,75 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: hsl(0, 0%, 0%);
+    --background: hsl(0, 0%, 100%);
+    --primary: hsl(233, 43%, 50%);
+    --secondary: hsl(271, 77%, 71%);
+    --accent: hsl(283, 70%, 63%);
+
+    --primary-light:  hsl(233, 43%, 70%);
+    --secondary-light: hsl(271, 77%, 91%);
+    --accent-light: hsl(283, 70%, 83%);
+
+    --border-light: #ffffff;
+    --border-dark: #000;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: hsl(0, 0%, 100%);
+    --background: hsl(0, 0%, 0%);
+    --primary: hsl(233, 43%, 50%);
+    --secondary: hsl(271, 77%, 29%);
+    --accent: hsl(283, 70%, 37%);
+
+    --primary-light:  hsl(233, 43%, 30%);
+    --secondary-light: hsl(271, 77%, 71%);
+    --accent-light: hsl(283, 70%, 63%);
+    
+    --border-light: #000000;
+    --border-dark: #ffffff;
+  }
+}
+
+:root{
+    --spacing: 1rem;
+    --nav-height: 70px;
+    --foot-height: 60px;
+    --miga-height: 50px;
+    --card-amount: 3;
+}
+
+
+/* ---------- General ---------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main{
+    padding: 1rem 3rem;
+    flex-grow: 2;
+}
+
+/* ---------- UTILS ---------- */
+
+.show{
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}

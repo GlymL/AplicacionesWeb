@@ -10,9 +10,4 @@ router.get("/", async (req, res) => {
     );
 });
 
-router.get("/api/cursos", async (req, res) => {
-    const cursos = await pool.query("SELECT * FROM cursos");
-    res.json(cursos);
-})
-
 module.exports = router;

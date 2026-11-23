@@ -2,20 +2,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Centro de formación</title>
+    <title>Centro de formación 
+        <% if (typeof titulo !== 'undefined') { %>
+            <%= " - " + titulo %>
+        <% } %>
+    </title>
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Paginas -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/cursos.css">
-    <link rel="stylesheet" href="css/aulas.css">
-    <link rel="stylesheet" href="css/docentes.css">
-    <link rel="stylesheet" href="css/mis_matriculas.css">
-    <link rel="stylesheet" href="css/accesibilidad.css">
-    <link rel="stylesheet" href="css/administracion.css">
-    <link rel="stylesheet" href="css/login.css">
+    <% if(typeof titulo !== 'undefined') {%>
+        <link rel="stylesheet" href="css/<%= titulo.toLowerCase() %>.css">
+    <% } %>
 
     <!-- Partials -->
     <link rel="stylesheet" href="css/footer.css">

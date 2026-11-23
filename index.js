@@ -6,10 +6,7 @@ require("dotenv").config();
 
 const mariadb = require("./services/mariadb");
 
-PORT = process.env.PORT || 3000
-
-// importamos los archivos de rutas
-const viewRoutes = require("./routes/views")
+PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -22,8 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+// importamos los archivos de rutas
+const viewRoutes = require("./routes/views");
+const cursosRoutes = require("./routes/cursos");
+
 // usamos las rutas de / para las vistas y las /api para las de API REST
 app.use("/", viewRoutes);
+app.use("/cursos", cursosRoutes);
 
 mariadb()
 

@@ -23,11 +23,13 @@ mariadbConnect();
 
 // importamos los archivos de rutas
 const viewRoutes = require("./routes/views");
-const cursosRoutes = require("./routes/cursos");
+const cursosRoutes = require("./routes/cursos.web");
+const cursosAPI = require("./routes/cursos.api");
 
 // usamos las rutas de / para las vistas y las /api para las de API REST
 app.use("/", viewRoutes);
 app.use("/cursos", cursosRoutes);
+app.use("/api/cursos", cursosAPI);
 
 
 app.listen(PORT, () => {

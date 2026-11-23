@@ -3,11 +3,8 @@ const { pool } = require("../services/mariadb");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    res.status(200).render("cursos",
-        {
-            titulo: "Cursos"
-        }
-    );
-});
+    const cursos = await pool.query("SELECT * FROM cursos");
+    res.json(cursos);
+})
 
 module.exports = router;

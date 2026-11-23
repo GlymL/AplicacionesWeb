@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config();
 
-const mariadb = require("./services/mariadb");
+const { mariadbConnect } = require("./services/mariadb");
 
 PORT = process.env.PORT || 3000;
 
@@ -19,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+mariadbConnect();
+
 // importamos los archivos de rutas
 const viewRoutes = require("./routes/views");
 const cursosRoutes = require("./routes/cursos");
@@ -27,7 +29,6 @@ const cursosRoutes = require("./routes/cursos");
 app.use("/", viewRoutes);
 app.use("/cursos", cursosRoutes);
 
-mariadb()
 
 app.listen(PORT, () => {
   console.log(`Centro de formación esta en http://localhost:${PORT}`);

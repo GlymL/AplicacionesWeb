@@ -1,5 +1,5 @@
 const express = require("express");
-const mariadb = require("../services/mariadb");
+const { pool } = require("../services/mariadb");
 const router = express.Router();
 
 router.get("/", async (req, res) => {

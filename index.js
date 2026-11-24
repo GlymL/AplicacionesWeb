@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config();
 
-const { mariadbConnect } = require("./services/mariadb");
+const { mariadbConnect } = require("./DB/mariadb");
 
 PORT = process.env.PORT || 3000;
 

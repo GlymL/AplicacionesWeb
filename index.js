@@ -4,12 +4,9 @@ const path = require("path");
 
 require("dotenv").config();
 
-const mariadb = require("./services/mariadb");
+const { mariadbConnect } = require("./services/mariadb");
 
-PORT = process.env.PORT || 3000
-
-// importamos los archivos de rutas
-const viewRoutes = require("./routes/views")
+PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -22,10 +19,42 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+mariadbConnect();
+
+// importamos los archivos de rutas
+const viewRoutes = require("./routes/views");
+const cursosRoutes = require("./routes/cursos.web");
+const cursosAPI = require("./routes/api/cursos.api");
+
+const docentesRoutes = require("./routes/docentes.web");
+const docentesAPI = require("./routes/api/docentes.api");
+
+const aulasRoutes = require("./routes/aulas.web");
+const aulasAPI = require("./routes/api/aulas.api");
+
+const mis_matriculasRoutes = require("./routes/mis_matriculas.web");
+const mis_matriculasAPI = require("./routes/api/mis_matriculas.api");
+
+
+const accesibilidadRoutes = require("./routes/accesibilidad.web");
+
+
 // usamos las rutas de / para las vistas y las /api para las de API REST
 app.use("/", viewRoutes);
+app.use("/cursos", cursosRoutes);
+app.use("/api/cursos", cursosAPI);
 
-mariadb()
+app.use("/docentes", docentesRoutes);
+app.use("/api/docentes", docentesAPI);
+
+app.use("/aulas", aulasRoutes);
+app.use("/api/aulas", aulasAPI);
+
+app.use("/matriculas", mis_matriculasRoutes);
+app.use("/api/matriculas", mis_matriculasAPI);
+
+app.use("/accesibilidad", accesibilidadRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Centro de formación esta en http://localhost:${PORT}`);

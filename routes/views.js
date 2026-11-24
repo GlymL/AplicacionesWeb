@@ -9,38 +9,6 @@ router.get("/", async (req, res) => {
     res.status(200).render("index");
 });
 
-router.get("/docentes", async (req, res) => {
-    res.status(200).render("docentes",
-        {
-            titulo: "Docentes"
-        }
-    );
-});
-
-router.get("/aulas", async (req, res) => {
-    res.status(200).render("aulas",
-        {
-            titulo: "Aulas"
-        }
-    );
-});
-
-router.get("/matriculas", async (req, res) => {
-    res.status(200).render("mis_matriculas",
-        {
-            titulo: "Mis matriculas"
-        }
-    );
-});
-
-router.get("/accesibilidad", async (req, res) => {
-    res.status(200).render("accesibilidad",
-        {
-            titulo: "Accesibilidad"
-        }
-    );
-});
-
 router.get("/administracion", async (req, res) => {
     res.status(200).render("administracion",
         {

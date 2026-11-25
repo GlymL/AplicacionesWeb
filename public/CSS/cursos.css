@@ -63,26 +63,26 @@ aside h3{
     text-align: center;
 }
 
-#panel {
+#buscar {
     display: flex;
     flex-direction: column;
 }
 
-#panel label {
+#buscar label {
     font-size: 1.1rem;
 }
 
-#panel .input-group{
+#buscar .input-group{
     margin: 1rem 0;
 }
 
-#panel textarea{
+#buscar textarea{
     margin-bottom: 1rem;
     min-height: 320px;
     max-height: 320px;
 }
 
-#panel input[type="submit"]{
+#buscar input[type="submit"]{
     margin: 1rem 0;
 }
 

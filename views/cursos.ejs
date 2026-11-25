@@ -14,17 +14,34 @@
     <main class="main-cursos">
         <h1>Cursos</h1>
         
-        <div class="listaCursos"></div>
+        <div class="listaCursos">
+            <% cursos.forEach(curso => { %>
+                <% if (curso.estado == "activo") {%>
+                <div class="card" data-id="` + curso.id + `">
+                    <h3><%= curso.nombre %></h3>
+                    <p><%= curso.descripcion %></p>
+                    <p>Horario: <%= curso.horario %></p>
+                    <p>Fecha de inicio: <%= curso.fecha_inicio %></p>
+                    <p>Fecha de fin: <%= curso.fecha_fin %></p>
+                    <p>Horario: <%= curso.horario %></p>
+                    <p>Plazas: <%= curso.plazas %></p>
+                    <p>En el aula: <%= curso.id_aula %></p>
+                    <p>Estado: <%= curso.estado %></p>
+                </div>
+
+            <% }}); %>
+
+        </div>
 
         
         <aside>
             <h3>Panel de gestión</h3>
-            <form id="panel">
+            <form id="buscar" action="/cursos/buscar" method="GET">
                 <div class="input-group">
                     <label class="input-group-text fw-bold" for="name">Nombre:</label>
                     <input class="form-control" type="text" name="name" id="name" placeholder="Nombre del curso" required>
                 </div>
-                
+                <!--
                 <label class="fw-bold" for="desc">Descripcion:</label>
                 <textarea class="form-control" name="desc" id="desc" placeholder="Descripción del curso" required></textarea>
                 
@@ -41,8 +58,9 @@
                     <label class="input-group-text fw-bold" for="cap">Plazas:</label>
                     <input class="form-control" type="number" name="cap" id="cap" min="0" value="0" required>
                 </div>
+                -->
 
-                <input class="btn btn-success fw-bold" type="submit" value="Crear">
+                <input class="btn btn-success fw-bold" type="submit" value="Buscar cursos">
             </form>
 
             <div class="buttons">

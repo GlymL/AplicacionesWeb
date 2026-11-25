@@ -1,128 +1,52 @@
-const Estados = {
-    INACTIVO: 0, ACTIVO: 1
+let form = document.querySelector("#buscar");
+
+form.onsubmit = async e => {
+    e.preventDefault();
+
+    const name = document.querySelector("#name").value;
+
+    
+    const response = await fetch("http://localhost:3000/api/cursos/buscar", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ "name": name })
+    });
+
+    const data = await response.json();
+
+    printCursos(data["cursos"]);
 }
-
-const cursos = [
-    {
-        id: 1,
-        nombre: "Nombre descriptivo",
-        descripcion: "Descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De tarde",
-        plazas: 10,
-        estado: Estados.ACTIVO
-    },
-    {
-        id: 2,
-        nombre: "Nombre muy descriptivo",
-        descripcion: "Descripcion del  muy descriptivo nombre, con todas sus cosas y tal y cual",
-        horario: "De mañana",
-        plazas: 15,
-        estado: Estados.ACTIVO
-    },
-    {
-        id: 3,
-        nombre: "Nombre extremadamente descriptivo",
-        descripcion: "Esto es una descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De madrugada",
-        plazas: 20,
-        estado: Estados.ACTIVO
-    }
-]
-
-const plantilla = {
-        id: 0,
-        nombre: "Nombre descriptivo",
-        descripcion: "Descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De tarde",
-        plazas: 10,
-        estado: Estados.ACTIVO
-    }
-
-
-let target = document.querySelector(".listaCursos");
 
 function crearGUICurso(curso){
 
     let html = `
         <div class="card" data-id="` + curso.id + `">
-            <h3>`+ curso.nombre +`</h3>
-            <p>`+ curso.descripcion +`</p>
-            <p>Horario: `+ curso.horario +`</p>
-            <p>Plazas: `+ curso.plazas +`</p>
-            <p>Estado: `+ curso.estado +`</p>
+            <h3>` + curso.nombre + `</h3>
+            <p>` + curso.descripcion + `</p>
+            <p>Horario: ` + curso.horario + `</p>
+            <p>Fecha de inicio: ` + curso.fecha_inicio + `</p>
+            <p>Fecha de fin: ` + curso.fecha_fin + `</p>
+            <p>Horario: ` + curso.horario + `</p>
+            <p>Plazas: ` + curso.plazas + `</p>
+            <p>En el aula: ` + curso.id_aula + `</p>
+            <p>Estado: ` + curso.estado + `</p>
         </div>
-        `;
+    `;
 
     return html;
+
 }
 
-cursos.forEach((c) => {
-    if(c.estado == Estados.ACTIVO)
-        target.innerHTML += crearGUICurso(c);
-})
 
-let btn_ordenar = document.querySelector("#btn_ordenar");
+function printCursos(cursos){
 
-btn_ordenar.onclick = e => {
-    cursos.sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-    console.log(cursos);
-
+    let target = document.querySelector(".listaCursos");
     target.innerHTML = "";
+
     cursos.forEach((c) => {
-        if(c.estado == Estados.ACTIVO)
-            target.innerHTML += crearGUICurso(c);
-    })
+        if(c.estado == "activo")
+            target.innerHTML += crearGUICurso(c)
+    });
+
 }
-
-let btn_borrar = document.querySelector("#btn_borrar");
-btn_borrar.onclick = (e) => {
-    for(let i = cursos.length - 1; i >= 0; i--){
-        if(cursos[i].estado == Estados.ACTIVO){
-            cursos[i].estado = Estados.INACTIVO;
-            break;
-        }
-    }
-
-    target.innerHTML = "";
-    cursos.forEach((c) => {
-        if(c.estado == Estados.ACTIVO)
-            target.innerHTML += crearGUICurso(c);
-    })
-}
-
-let form = document.querySelector("#panel");
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    let nCurso = { ...plantilla };
-    nCurso.id = cursos.length+1;
-
-
-    const nameCurso = form.elements["name"].value;
-    const descCurso = form.elements["desc"].value;
-    const capCurso = form.elements["cap"].value;
-    const tCurso = form.elements["time"].value;
-
-    nCurso.nombre = nameCurso;
-    nCurso.descripcion = descCurso;
-    nCurso.plazas = capCurso;
-    if(tCurso == 0)
-        nCurso.horario = "De mañana";
-    else if(tCurso == 1)
-        nCurso.horario = "De mediodía";
-    else
-        nCurso.horario = "De tarde";
-
-
-    cursos.push(nCurso);
-
-    target.innerHTML = "";
-    cursos.forEach((c) => {
-        if(c.estado == Estados.ACTIVO)
-            target.innerHTML += crearGUICurso(c);
-    })
-
-    console.log("A");
-})
 

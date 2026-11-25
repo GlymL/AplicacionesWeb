@@ -1,6 +1,6 @@
 
 function userToView(req, res, next) {
-  res.local.user = req.session.user || null;
+  res.locals.user = req.session.user || null;
   next(); // Pasamos al siguiente middleware
 }
 
@@ -24,7 +24,7 @@ function isAdmin(req, res, next) {
   //if (req.originalUrl.startsWith("/api")) {
     //return res.status(403).json({ error: "Acceso denegado: solo administradores" });
   //}
-  return res.status(403).send("Acceso denegado: no tienes permisos de administrador");
+  return res.status(403).render("index", { ok: true, redirect: "/" });
 }
 
 module.exports = {

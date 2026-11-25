@@ -11,14 +11,17 @@
     <nav id="menu">
         <ul class="lista_menu">
             <li class="none"><a href="/" >Inicio</a></li>
-            <li class="none"><a href="/" >Inicio</a></li>
-            <li><a href="/cursos">Cursos</a></li>
-            <li><a href="/docentes">Docentes</a></li>
-            <li><a href="/aulas">Aulas</a></li>
-            <li><a href="/matriculas">Mis matriculas</a></li>
-            <li><a href="/accesibilidad">Accesibilidad</a></li>
-            <li><a href="/administracion">Administración</a></li>
+            <% if (user) {%>
+                <li><a href="/cursos">Cursos</a></li>
+                <li><a href="/docentes">Docentes</a></li>
+                <li><a href="/aulas">Aulas</a></li>
+                <li><a href="/matriculas">Mis matriculas</a></li>
+                <li><a href="/accesibilidad">Accesibilidad</a></li>
+                <% if(user.rol == "admin") { %>
+                    <li><a href="/administracion">Administración</a></li>
+                <% } %>
+            <% } %>
         </ul>
     </nav>
-    <button class="btn btn-danger fw-bold">Cerrar Sesión</button>
+    <a href="/logout" class="btn btn-danger fw-bold">Cerrar Sesión</a>
 </header>

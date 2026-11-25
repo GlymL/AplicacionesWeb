@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Para los logs
-app.use((req, res) => {
+app.use((req, res, next) => {
   console.log(req.method, req.originalUrl);
   next(); // Pasamos al siguiente middleware
 })
@@ -45,6 +45,7 @@ mariadbConnect(); // Conectamos a la base de datos
 
 // Importamos las rutas
 const viewRoutes = require("./routes/views");
+const authRoutes = require("./routes/auth.web");
 
 const cursosRoutes = require("./routes/cursos.web");
 const cursosAPI = require("./routes/api/cursos.api");
@@ -58,28 +59,33 @@ const aulasAPI = require("./routes/api/aulas.api");
 const mis_matriculasRoutes = require("./routes/mis_matriculas.web");
 const mis_matriculasAPI = require("./routes/api/mis_matriculas.api");
 
+const administracionRoutes = require("./routes/administracion.web");
+
 const accesibilidadRoutes = require("./routes/accesibilidad.web");
 
 
 // usamos las rutas de / para las vistas y las /api para las de API REST
 //app.use("/", authRoutes) -> para el login
 app.use("/", viewRoutes);
+app.use("/", authRoutes);
 
 // app.use("/cursos", isAuthenticated, cursosRoutes);
 // app.use("/cursos", isAuthenticated, isAdmin, cursosRoutes); para admin
-app.use("/cursos", cursosRoutes);
+app.use("/cursos", isAuthenticated, cursosRoutes);
 app.use("/api/cursos", cursosAPI);
 
-app.use("/docentes", docentesRoutes);
+app.use("/docentes", isAuthenticated, docentesRoutes);
 app.use("/api/docentes", docentesAPI);
 
-app.use("/aulas", aulasRoutes);
+app.use("/aulas", isAuthenticated, aulasRoutes);
 app.use("/api/aulas", aulasAPI);
 
-app.use("/matriculas", mis_matriculasRoutes);
+app.use("/matriculas", isAuthenticated, mis_matriculasRoutes);
 app.use("/api/matriculas", mis_matriculasAPI);
 
-app.use("/accesibilidad", accesibilidadRoutes);
+app.use("/administracion", isAuthenticated, isAdmin, administracionRoutes);
+
+app.use("/accesibilidad", isAuthenticated, accesibilidadRoutes);
 
 // Para paginas que no existe
 app.use((req, res) => {

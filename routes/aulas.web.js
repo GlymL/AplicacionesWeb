@@ -3,7 +3,9 @@ const { pool } = require("../DB/mariadb");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    res.status(200).render("aulas",
+
+
+    res.status(200).render("aulas",   
         {
             titulo: "Aulas"
         }

@@ -2,41 +2,16 @@ const Estados = {
     INACTIVO: 0, ACTIVO: 1
 }
 
-const cursos = [
-    {
-        id: 1,
-        nombre: "Nombre descriptivo",
-        descripcion: "Descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De tarde",
-        plazas: 10,
-        estado: Estados.ACTIVO
-    },
-    {
-        id: 2,
-        nombre: "Nombre muy descriptivo",
-        descripcion: "Descripcion del  muy descriptivo nombre, con todas sus cosas y tal y cual",
-        horario: "De mañana",
-        plazas: 15,
-        estado: Estados.ACTIVO
-    },
-    {
-        id: 3,
-        nombre: "Nombre extremadamente descriptivo",
-        descripcion: "Esto es una descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De madrugada",
-        plazas: 20,
-        estado: Estados.ACTIVO
-    }
-]
-
 const plantilla = {
-        id: 0,
-        nombre: "Nombre descriptivo",
-        descripcion: "Descripcion del nombre, con todas sus cosas y tal y cual",
-        horario: "De tarde",
-        plazas: 10,
-        estado: Estados.ACTIVO
-    }
+    id: 0,
+    nombre: "Nombre descriptivo",
+    descripcion: "Descripcion del nombre, con todas sus cosas y tal y cual",
+    horario: "De tarde",
+    plazas: 10,
+    estado: Estados.ACTIVO
+}
+
+
 
 
 let target = document.querySelector(".listaCursos");

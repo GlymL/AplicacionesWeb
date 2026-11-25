@@ -1,11 +1,17 @@
+// Paquetes que usamos
 const express = require('express');
 const ejs = require("ejs");
 const path = require("path");
+const session = require("express-session");
 
+// Importamos .env
 require("dotenv").config();
 
+// Archivos que tienen logica necesaria
 const { mariadbConnect } = require("./DB/mariadb");
+const { userToView, isAuthenticated, isAdmin } = require("./middlewares/auth");
 
+// Para el puerto en caso de no estar definido se pone 3000
 PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -14,15 +20,33 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Middlewares, necesario para interpretar json, url y tener la carpeta de public accesible. 
+// Para poder usar json y url. Tambien se pone que carpeta es la de los recursos estaticos
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-mariadbConnect();
+// Para los logs
+app.use((req, res, next) => {
+  console.log(req.method, req.originalUrl);
+  next(); // Pasamos al siguiente middleware
+})
 
-// importamos los archivos de rutas
+// Configuración de la sesion
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // debido a que estamos en http las cookies no son seguras
+}))
+
+app.use(userToView); // la variable user disponible en los ejs
+
+mariadbConnect(); // Conectamos a la base de datos
+
+// Importamos las rutas
 const viewRoutes = require("./routes/views");
+const authRoutes = require("./routes/auth.web");
+
 const cursosRoutes = require("./routes/cursos.web");
 const cursosAPI = require("./routes/api/cursos.api");
 
@@ -35,26 +59,38 @@ const aulasAPI = require("./routes/api/aulas.api");
 const mis_matriculasRoutes = require("./routes/mis_matriculas.web");
 const mis_matriculasAPI = require("./routes/api/mis_matriculas.api");
 
+const administracionRoutes = require("./routes/administracion.web");
 
 const accesibilidadRoutes = require("./routes/accesibilidad.web");
 
 
 // usamos las rutas de / para las vistas y las /api para las de API REST
+//app.use("/", authRoutes) -> para el login
 app.use("/", viewRoutes);
-app.use("/cursos", cursosRoutes);
+app.use("/", authRoutes);
+
+// app.use("/cursos", isAuthenticated, cursosRoutes);
+// app.use("/cursos", isAuthenticated, isAdmin, cursosRoutes); para admin
+app.use("/cursos", isAuthenticated, cursosRoutes);
 app.use("/api/cursos", cursosAPI);
 
-app.use("/docentes", docentesRoutes);
+app.use("/docentes", isAuthenticated, docentesRoutes);
 app.use("/api/docentes", docentesAPI);
 
-app.use("/aulas", aulasRoutes);
+app.use("/aulas", isAuthenticated, aulasRoutes);
 app.use("/api/aulas", aulasAPI);
 
-app.use("/matriculas", mis_matriculasRoutes);
+app.use("/matriculas", isAuthenticated, mis_matriculasRoutes);
 app.use("/api/matriculas", mis_matriculasAPI);
 
-app.use("/accesibilidad", accesibilidadRoutes);
+app.use("/administracion", isAuthenticated, isAdmin, administracionRoutes);
 
+app.use("/accesibilidad", isAuthenticated, accesibilidadRoutes);
+
+// Para paginas que no existe
+app.use((req, res) => {
+  res.status(404).render("404", { url: req.originalUrl });
+})
 
 app.listen(PORT, () => {
   console.log(`Centro de formación esta en http://localhost:${PORT}`);

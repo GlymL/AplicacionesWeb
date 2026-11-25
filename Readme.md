@@ -34,4 +34,5 @@ Para saber más sobre el proyecto vea se [Docs del profesor](./Docs/Docs_profe.m
 > PORT=3000
 > DB_USER=tu_suario
 > DB_PASSWORD=contra_DB
+> SESSION_SECRET=secreto_de_la_sesion
 > ````

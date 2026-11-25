@@ -26,5 +26,7 @@
     
     <!-- Scripts -->
     <script src="js/menu.js" defer></script>
-    <script src="js/cursos.js" defer></script>
+    <% if(typeof titulo !== 'undefined') {%>
+        <script src="js/<%= titulo.toLowerCase() %>.js" defer></script>
+    <% } %>
 </head>

@@ -2,13 +2,13 @@ const express = require("express");
 const { pool } = require("../DB/mariadb");
 const router = express.Router();
 
-router.get("/signup", async (req, res) => {
+/*router.get("/signup", async (req, res) => {
     res.status(200).render("signup",
         {
             titulo: "Signup"
         }
     );
-});
+});*/
 
 router.get("/login", async (req, res) => {
     res.status(200).render("login",

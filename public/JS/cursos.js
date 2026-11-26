@@ -6,7 +6,7 @@ form.onsubmit = async e => {
     const name = document.querySelector("#name").value;
 
     
-    const response = await fetch("http://localhost:3000/api/cursos/buscar", {
+    const response = await fetch("/api/cursos/buscar", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ "name": name })
@@ -44,9 +44,31 @@ function printCursos(cursos){
     target.innerHTML = "";
 
     cursos.forEach((c) => {
-        if(c.estado == "activo")
-            target.innerHTML += crearGUICurso(c)
+        target.innerHTML += crearGUICurso(c)
     });
 
 }
 
+const btn_reiniciar = document.querySelector("#btn_reiniciar");
+
+btn_reiniciar.onclick = async e => {
+    e.preventDefault();
+
+    try{
+        const response = await fetch("/api/cursos", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+
+        if(response.ok){
+            printCursos(data);
+            return;
+        }
+
+        console.error("Error: ", cursos.error)
+    }catch (error){
+        console.log(error.message);
+    }
+}

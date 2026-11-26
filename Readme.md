@@ -32,7 +32,12 @@ Para saber más sobre el proyecto vea se [Docs del profesor](./Docs/Docs_profe.m
 > Recuerda que necesitas crear una archi `.env` y poner las siguientes variables
 > ```` dotenv
 > PORT=3000
-> DB_USER=tu_suario
-> DB_PASSWORD=contra_DB
-> SESSION_SECRET=secreto_de_la_sesion
+> 
+> DB_USER=usuario
+> DB_PASSWORD=
+> DB_HOST=localhost
+> DB_PORT=3306
+> DB_DATABASE=aw_practica
+> 
+> SESSION_SECRET=sesion_secret
 > ````

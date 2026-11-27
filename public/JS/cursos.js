@@ -1,3 +1,6 @@
+printCursos(cursos);
+
+
 let form = document.querySelector("#buscar");
 
 form.onsubmit = async e => {
@@ -6,10 +9,9 @@ form.onsubmit = async e => {
     const name = document.querySelector("#name").value;
 
     
-    const response = await fetch("/api/cursos/buscar", {
-        method: 'POST',
+    const response = await fetch("/api/cursos?name=" + name, {
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ "name": name })
     });
 
     const data = await response.json();
@@ -26,7 +28,6 @@ function crearGUICurso(curso){
             <p>Horario: ` + curso.horario + `</p>
             <p>Fecha de inicio: ` + curso.fecha_inicio + `</p>
             <p>Fecha de fin: ` + curso.fecha_fin + `</p>
-            <p>Horario: ` + curso.horario + `</p>
             <p>Plazas: ` + curso.plazas + `</p>
             <p>En el aula: ` + curso.id_aula + `</p>
             <p>Estado: ` + curso.estado + `</p>

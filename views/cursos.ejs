@@ -14,51 +14,16 @@
     <main class="main-cursos">
         <h1>Cursos</h1>
         
-        <div class="listaCursos">
-            <% cursos.forEach(curso => { %>
-                <% if (curso.estado == "activo") {%>
-                <div class="card" data-id="` + curso.id + `">
-                    <h3><%= curso.nombre %></h3>
-                    <p><%= curso.descripcion %></p>
-                    <p>Horario: <%= curso.horario %></p>
-                    <p>Fecha de inicio: <%= curso.fecha_inicio %></p>
-                    <p>Fecha de fin: <%= curso.fecha_fin %></p>
-                    <p>Horario: <%= curso.horario %></p>
-                    <p>Plazas: <%= curso.plazas %></p>
-                    <p>En el aula: <%= curso.id_aula %></p>
-                    <p>Estado: <%= curso.estado %></p>
-                </div>
-
-            <% }}); %>
-
-        </div>
+        <div class="listaCursos"></div>
 
         
         <aside>
             <h3>Panel de gestión</h3>
-            <form id="buscar" action="/cursos/buscar" method="GET">
+            <form id="buscar">
                 <div class="input-group">
                     <label class="input-group-text fw-bold" for="name">Nombre:</label>
                     <input class="form-control" type="text" name="name" id="name" placeholder="Nombre del curso" required>
                 </div>
-                <!--
-                <label class="fw-bold" for="desc">Descripcion:</label>
-                <textarea class="form-control" name="desc" id="desc" placeholder="Descripción del curso" required></textarea>
-                
-                <div class="input-group">
-                    <label class="input-group-text fw-bold" for="time">Turno:</label>
-                    <select class="form-control" name="time" id="time" required>
-                        <option selected value="0">Mañana</option>
-                        <option value="1">Mediodía</option>
-                        <option value="2">Tarde</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label class="input-group-text fw-bold" for="cap">Plazas:</label>
-                    <input class="form-control" type="number" name="cap" id="cap" min="0" value="0" required>
-                </div>
-                -->
 
                 <input class="btn btn-success fw-bold" type="submit" value="Buscar cursos">
             </form>
@@ -71,5 +36,11 @@
     
     
     <%- include('./partials/footer') %>
+
+    <script>
+        const cursos = <%- JSON.stringify(cursos) %> ;
+    </script>
 </body>
+
+
 </html>

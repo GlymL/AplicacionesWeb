@@ -9,7 +9,6 @@ require("dotenv").config();
 
 // Archivos que tienen logica necesaria
 const { mariadbConnect } = require("./DB/mariadb");
-const { userToView, isAuthenticated, isAdmin } = require("./middlewares/auth");
 
 // Para el puerto en caso de no estar definido se pone 3000
 PORT = process.env.PORT || 3000;
@@ -24,6 +23,35 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+// Funciones de auth 
+function userToView(req, res, next) {
+  res.locals.user = req.session.user || null;
+  next(); // Pasamos al siguiente middleware
+}
+
+function isAuthenticated(req, res, next) {
+  if (req.session.user) {
+    return next();
+  }
+  // Si es petición API devuelve 401; si es vista, redirige al login
+  // Veremos si ponemos la API detras del login
+  //if (req.originalUrl.startsWith("/api")) {
+    //return res.status(401).json({ error: "No autenticado" });
+  //}
+  return res.redirect("/login");
+}
+
+function isAdmin(req, res, next) {
+  if (req.session.user && req.session.user.rol === "admin") {
+    return next(); // Siguiente middleware
+  }
+  // Veremos si ponemos api detras del login
+  //if (req.originalUrl.startsWith("/api")) {
+    //return res.status(403).json({ error: "Acceso denegado: solo administradores" });
+  //}
+  return res.status(403).render("index", { ok: true, redirect: "/" });
+}
 
 // Para los logs
 app.use((req, res, next) => {

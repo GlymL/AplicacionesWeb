@@ -2,10 +2,10 @@
   "name": "app_web",
   "version": "1.0.0",
   "description": "Para aprender a hacer una aplicacion web",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js"
+    "start": "node app.js",
+    "dev": "node --watch app.js"
   },
   "repository": {
     "type": "git",

@@ -2,11 +2,11 @@ const db = require('mariadb');
 
 // 1. Creamos el pool UNA SOLA VEZ fuera de la función
 const pool = db.createPool({ 
-    host: 'localhost',
+    host: process.env.DB_HOST,
     user: process.env.DB_USER, 
     password: process.env.DB_PASSWORD, 
-    port: 3306,
-    database: 'aw_practica',
+    port: process.env.DB_PORT,
+    database: process.env.DB_DATABASE,
     metaAsArray: false,
     ssl: false,
     dateStrings: true

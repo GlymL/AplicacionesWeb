@@ -5,7 +5,9 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     res.status(200).render("accesibilidad",
         {
-            titulo: "Accesibilidad"
+            titulo: "Accesibilidad",
+            css: "accesibilidad.css",
+            js: null
         }
     );
 });

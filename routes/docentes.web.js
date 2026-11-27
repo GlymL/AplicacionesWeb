@@ -5,7 +5,9 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     res.status(200).render("docentes",
         {
-            titulo: "Docentes"
+            titulo: "Docentes",
+            css: "docentes.css",
+            js: null
         }
     );
 });

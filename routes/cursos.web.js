@@ -4,12 +4,14 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
      try {
-        const response = await fetch("http://localhost:3000/api/cursos");
 
-        const cursos = await response.json();
+        const cursos = await pool.query("SELECT id_curso, id_docente, id_aula, nombre, descripcion, fecha_inicio, fecha_fin, horario, plazas, imagen, estado FROM cursos WHERE estado = 'activo'");
+
 
         res.status(200).render("cursos", {
             titulo: "Cursos",
+            css: "cursos.css",
+            js: "cursos.js",
             cursos: cursos
         });
 

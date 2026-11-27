@@ -7,7 +7,9 @@ router.get("/", async (req, res) => {
 
     res.status(200).render("aulas",   
         {
-            titulo: "Aulas"
+            titulo: "Aulas",
+            css: "aulas.css",
+            js: null
         }
     );
 });

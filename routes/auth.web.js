@@ -13,7 +13,9 @@ const router = express.Router();
 router.get("/login", async (req, res) => {
     res.status(200).render("login",
         {
-            titulo: "Login"
+            titulo: "Login",
+            css: "login.css",
+            js : "login.js"
         }
     );
 });

@@ -5,7 +5,9 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     res.status(200).render("mis_matriculas",
         {
-            titulo: "Mis matriculas"
+            titulo: "Mis matriculas",
+            css:"mis_matriculas.css",
+            js: null
         }
     );
 });
